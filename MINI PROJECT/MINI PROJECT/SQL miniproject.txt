@@ -1,0 +1,28 @@
+create database StudentManagement
+use StudentManagement
+
+create table tblCourses
+(CourseId int primary key,CourseName varchar(20),Courseduration int, Coursefees float)
+
+insert into tblCourses values(001,'himakar',45,35000),(002,'ravi',40,40000),(003,'kiran',35,50000);
+
+select * from tblCourses
+
+create table tblStudents
+(StudentId int primary key,StudentName varchar(20),studentDOB date)
+
+insert into tblstudents values(100,'jasu','10/1/1994'),
+(200,'moanohar','2/3/1997'),(300,'girish','6/7/1998')
+
+select * from tblStudents
+
+create table tblEnrollDetails
+(Courseid int foreign key references tblCourses(CourseId),
+ StudentId int foreign key references tblStudents(StudentId),
+ EnrollDate date)
+
+ insert into tblEnrollDetails values(101,10,'2021/6/1'),
+ (102,20,'2021/6/11'),(103,30,'2021/6/21')
+
+
+ select * from tblEnrollDetails
